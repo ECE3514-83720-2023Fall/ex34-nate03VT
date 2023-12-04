@@ -84,7 +84,7 @@ private:
     NodeType *rightChildPtr = nullptr; // pointer to right child
   };
 
-  NodeType *root = nullptr; // root of tree
+  NodeType *root = nullptr; // root of tree, will be empty on constructions
 
   // helper constructor
   BinaryTree(NodeType *nodePtr);
@@ -94,11 +94,11 @@ private:
   void copyTree(NodeType *treePtr, NodeType *&newTreePtr) const;
 
   // recursive helper to destroy a tree
-  void destroyTree(NodeType *&treePtr);
+  void destroyTree(NodeType *&treePtr); //do post order traversal, remove left subtree and the right subtree then node. (recursive)
 
   // recursive helpers to perform traversals
   void preorder(NodeType *treePtr, FunctionType visit);
-  void inorder(NodeType *treePtr, FunctionType visit);
+  void inorder(NodeType *treePtr, FunctionType visit); //visits root before left node
   void postorder(NodeType *treePtr, FunctionType visit);
 };
 
